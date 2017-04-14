@@ -1,0 +1,56 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Cadastro de produtos
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="cards">
+		<ion-card>
+			<ion-card-header>
+				<h2 class="center">Novo Produto</h2>
+				<hr>
+			</ion-card-header>
+			<ion-card-content>
+				<form (ngSubmit)="addProduto(p)">
+					<ion-list>
+						<ion-item>
+							<ion-input type="text" placeholder="Descrição" [(ngModel)]="p.descricao" [ngModelOptions]="{standalone: true}"></ion-input>
+						</ion-item>
+
+						<ion-item>
+							<ion-input type="number" placeholder="Valor" [(ngModel)]="p.valor" [ngModelOptions]="{standalone: true}"></ion-input>
+						</ion-item>
+					</ion-list>
+					<br>
+					<button ion-button type="submit" block>Adicionar Produto</button>
+			</form>
+			</ion-card-content>
+		</ion-card>
+	</div>
+
+	<div class="cards">
+		<ion-card>
+			<ion-card-header>
+				<h2 class="center">Produtos em estoque</h2>
+				<hr>
+			</ion-card-header>
+			<ion-card-content>
+				<ion-list>
+					<ion-item *ngFor="let produto of Produtos">
+						{{produto.descricao}}
+
+						<ion-note item-right>
+							R${{produto.valor}}
+						</ion-note>
+
+					</ion-item>
+				</ion-list>
+			</ion-card-content>
+		</ion-card>
+	</div>
+
+</ion-content>

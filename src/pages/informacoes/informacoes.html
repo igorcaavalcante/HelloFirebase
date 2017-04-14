@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Informações sobre os produtos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+	<div class="cards">
+		<ion-card>
+			<ion-card-header>
+				Valor médio dos produtos:
+			</ion-card-header>
+			<ion-card-content>
+				<h1 class="center">R$ {{media}}</h1>
+			</ion-card-content>
+		</ion-card>
+	</div>
+
+	<div class="cards">
+		<ion-card>
+			<ion-card-header>
+				Produto mais caro:
+			</ion-card-header>
+			<ion-card-content>
+        <ion-list>
+          <ion-item>
+            {{maiscaro.descricao}}
+
+            <ion-note item-right>
+              R${{maiscaro.valor}}
+            </ion-note>
+
+          </ion-item>
+        </ion-list>
+			</ion-card-content>
+		</ion-card>
+	</div>
+
+	<div class="cards">
+		<ion-card>
+			<ion-card-header>
+				Produto mais barato:
+			</ion-card-header>
+			<ion-card-content>
+        <ion-list>
+          <ion-item>
+            {{maisbarato.descricao}}
+
+            <ion-note item-right>
+              R${{maisbarato.valor}}
+            </ion-note>
+
+          </ion-item>
+        </ion-list>
+			</ion-card-content>
+		</ion-card>
+	</div>
+
+</ion-content>
